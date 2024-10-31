@@ -1,5 +1,7 @@
 type SupportedLocale = 'en' | 'zh';
 
+type LocaleValue<T> = Record<SupportedLocale, T>;
+
 type SiteConfig = {
   title: string;
   description: string;
@@ -19,4 +21,4 @@ type LocaleConfig = {
 
 type NavKey = keyof NavConfig;
 
-export type { SupportedLocale, LocaleConfig, NavKey };
+export type { SupportedLocale, LocaleValue, LocaleConfig, NavKey };

@@ -1,0 +1,12 @@
+---
+import DefaultLayout from "../../entry/layouts/DefaultLayout.astro";
+import { ProjectListView } from "../../domain/project";
+
+const meta = {
+  title: '项目列表',
+};
+---
+
+<DefaultLayout meta={meta}>
+  <ProjectListView />
+</DefaultLayout>

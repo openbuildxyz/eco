@@ -1,12 +1,12 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-import type { SupportedLocale, LocaleConfig } from './types';
+import type { LocaleValue, LocaleConfig } from '../types';
 
 export const SITE_TITLE = 'OpenBuild Ecosystem';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
 
-export const I18N_CONFIG: Record<SupportedLocale, LocaleConfig> = {
+export const I18N_CONFIG: LocaleValue<LocaleConfig> = {
   en: {
     site: {
       title: SITE_TITLE,
