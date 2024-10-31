@@ -1,27 +1,25 @@
 import type { LocaleValue } from '@/types';
 
+import type { Contributor } from '../contributor';
+
 type GitHubRepo = {
   owner: string;
   name: string;
 };
 
-type GitHubUser = {
-  id: number;
-  username: string;
-};
-
-type Project = {
+type InternalProject = {
   id: string;
   title: LocaleValue<string>;
   description?: LocaleValue<string>;
   repo?: GitHubRepo | string;
   homepage?: string;
-  owners: GitHubUser[];
+  owners: Contributor['github']['username'][];
 };
 
-type ResolvedProject = Omit<Project, 'title' | 'description'> & {
+type Project = Omit<InternalProject, 'title' | 'description' | 'owners'> & {
   title: string;
   description: string;
+  owners: Contributor[];
 };
 
-export type { Project, ResolvedProject };
+export type { InternalProject, Project };

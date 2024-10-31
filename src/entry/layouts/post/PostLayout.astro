@@ -10,13 +10,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <DefaultLayout meta={{ title, description }}>
-  <style slot="custom-style" is:global>
-    main {
-      width: calc(100% - 2em);
-      max-width: 100%;
-      margin: 0;
-    }
-  </style>
   <style slot="custom-style">
     .hero-image {
       width: 100%;

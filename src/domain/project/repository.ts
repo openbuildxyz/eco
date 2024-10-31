@@ -1,8 +1,10 @@
-import type { SupportedLocale, LocaleValue } from '@/types';
+import type { SupportedLocale } from '@/types';
+import { unwrapLocalValue } from '@/utils';
 
-import type { Project, ResolvedProject } from './typing';
+import { getList as getContributorList } from '../contributor';
+import type { InternalProject, Project } from './typing';
 
-const projects: Project[] = [
+const projects: InternalProject[] = [
   {
     id: 'openbuildxyz',
     title: {
@@ -13,39 +15,30 @@ const projects: Project[] = [
       en: 'Help ✦ Developers ✦ get on the Success Way to Web3',
       zh: 'Help ✦ Developers ✦ get on the Success Way to Web3',
     },
-    owners: [
-      { id: 5770157, username: 'zhang-wenchao' },
-      { id: 562589, username: 'ourai' },
-    ],
+    owners: ['zhang-wenchao', 'ourai'],
     homepage: 'https://openbuild.xyz',
   },
   {
-    id: 'openbuildxyzx',
+    id: 'amphitheatre',
     title: {
-      en: 'OpenBuild Official Website',
-      zh: 'OpenBuild 官网',
+      en: 'Amphitheatre',
+      zh: 'Amphitheatre',
     },
     description: {
-      en: 'Help ✦ Developers ✦ get on the Success Way to Web3',
-      zh: 'Help ✦ Developers ✦ get on the Success Way to Web3',
+      en: 'Instantly spin up fresh, automated dev environments in the cloud and start developing within seconds.',
+      zh: 'Instantly spin up fresh, automated dev environments in the cloud and start developing within seconds.',
     },
-    owners: [
-      { id: 5770157, username: 'zhang-wenchao' },
-      { id: 562589, username: 'ourai' },
-    ],
-    homepage: 'https://openbuild.xyz',
+    owners: ['wangeguo'],
+    homepage: 'https://amphitheatre.app',
   },
 ];
 
-function resolveLocalValue(data: LocaleValue<any>, locale: SupportedLocale) {
-  return data[locale] || data.en;
-}
-
-function getList(locale: SupportedLocale): ResolvedProject[] {
-  return projects.map(({ title, description, ...others }) => ({
+function getList(locale: SupportedLocale): Project[] {
+  return projects.map(({ title, description, owners, ...others }) => ({
     ...others,
-    title: resolveLocalValue(title, locale),
-    description: description ? resolveLocalValue(description, locale) : '',
+    title: unwrapLocalValue(title, locale),
+    description: description ? unwrapLocalValue(description, locale) : '',
+    owners: getContributorList(owners, locale),
   }));
 }
 

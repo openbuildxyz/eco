@@ -3,29 +3,47 @@ import {
   Avatar, Tooltip,
 } from '@/components/react';
 
-import type { ResolvedProject } from '../../typing';
+import type { Project } from '../../typing';
 
 type ProjectCardWidgetProps = {
   className?: string;
-  dataSource: ResolvedProject;
+  dataSource: Project;
 };
 
+function resolveProjLink({ repo, homepage }: Project): string {
+  if (homepage) {
+    return homepage;
+  }
+
+  if (repo) {
+    return typeof repo === 'string' ? repo : `https://github.com/${repo.owner}/${repo.name}`;
+  }
+
+  return '';
+}
+
 function ProjectCardWidget({ dataSource }: ProjectCardWidgetProps) {
+  const projLink = resolveProjLink(dataSource);
+
   return (
     <Card>
-      <CardHeader>{dataSource.title}</CardHeader>
-      <CardBody className="text-sm font-light">{dataSource.description}</CardBody>
+      <CardHeader className="leading-none">
+        {projLink ? (
+          <a href={projLink} target="_blank" rel="nofollow external">{dataSource.title}</a>
+        ) : dataSource.title}
+      </CardHeader>
+      <CardBody className="py-0 text-sm font-light break-all">{dataSource.description}</CardBody>
       <CardFooter>
         {dataSource.owners.map(user => (
-          <Tooltip content={user.username} showArrow>
+          <Tooltip key={user.github.username} content={user.nickname} showArrow>
             <a
-              href={`https://github.com/${user.username}`}
+              href={`https://github.com/${user.github.username}`}
               target="_blank"
               rel="nofollow external"
             >
               <Avatar
                 className="w-6 h-6"
-                src={`https://avatars.githubusercontent.com/u/${user.id}`}
+                src={`https://avatars.githubusercontent.com/u/${user.github.id}`}
                 isBordered
               />
             </a>
