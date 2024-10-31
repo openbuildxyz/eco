@@ -1,25 +1,9 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
-import { I18N_CONFIG } from '../shared/consts';
-import BaseHead from '../shared/components/BaseHead.astro';
-import Header from '../shared/components/Header.astro';
-import Footer from '../shared/components/Footer.astro';
-
-const locale = (Astro.currentLocale || 'en') as 'en' | 'zh';
-const i18n = I18N_CONFIG[locale];
+import DefaultLayout from '../entry/layouts/DefaultLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={i18n.site.title} description={i18n.site.description} />
-  </head>
-  <body>
-    <Header hideNavs />
-    <main>
-      <p style="text-align: center;">Sorry, only <a href={getRelativeLocaleUrl('zh', '/')}>Chinese version</a> is available for now.</p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<DefaultLayout>
+  <p style="text-align: center;">Sorry, only <a href={getRelativeLocaleUrl('zh', '/')}>Chinese version</a> is available for now.</p>
+</DefaultLayout>

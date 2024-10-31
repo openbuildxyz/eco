@@ -1,24 +1,8 @@
 ---
-import { I18N_CONFIG } from '../../shared/consts';
-import BaseHead from '../../shared/components/BaseHead.astro';
-import Header from '../../shared/components/Header.astro';
-import Footer from '../../shared/components/Footer.astro';
-
-const locale = (Astro.currentLocale || 'en') as 'en' | 'zh';
-const i18n = I18N_CONFIG[locale];
+import DefaultLayout from '../../entry/layouts/DefaultLayout.astro';
 ---
 
-<!doctype html>
-<html lang="zh-CN" dir="ltr">
-  <head>
-    <BaseHead title={i18n.site.title} description={i18n.site.description} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <p>OpenBuild 是一个面向 Web3 开发者的开源社区。</p>
-      <p>我们致力于为开发者提供高质量的系统性内容和活动，同时连接 Web2 和 Web3，帮助开发者过渡到去中心化的网络，并通过提供必要的工具和资源，帮助开发者建立声誉体系，构建信任，创造商业机会。</p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<DefaultLayout>
+  <p>OpenBuild 是一个面向 Web3 开发者的开源社区。</p>
+  <p>我们致力于为开发者提供高质量的系统性内容和活动，同时连接 Web2 和 Web3，帮助开发者过渡到去中心化的网络，并通过提供必要的工具和资源，帮助开发者建立声誉体系，构建信任，创造商业机会。</p>
+</DefaultLayout>

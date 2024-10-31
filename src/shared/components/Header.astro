@@ -1,28 +1,41 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
+import type { SupportedLocale, NavKey } from '../types';
 import { I18N_CONFIG } from '../consts';
+
 import HeaderLink from './HeaderLink.astro';
 
 interface Props {
   hideNavs?: boolean;
 }
 
+type SiteNav = {
+  key: NavKey;
+  path: string;
+}
+
 const { hideNavs = false } = Astro.props;
-const locale = (Astro.currentLocale || 'en') as 'en' | 'zh';
+const locale = (Astro.currentLocale || 'en') as SupportedLocale;
 const i18n = I18N_CONFIG[locale];
 const getLocaleUrl = getRelativeLocaleUrl.bind(null, locale);
+
+const navs: SiteNav[] = [
+  { key: 'home', path: '/' },
+  { key: 'projects', path: '/projects' },
+  { key: 'contributing', path: '/contributing' },
+  { key: 'about', path: '/about' },
+];
 ---
 
 <header>
-  <nav>
+  <nav class="flex items-center justify-between">
     <h2><a href={getLocaleUrl('/')}>{i18n.site.title}</a></h2>
     {hideNavs !== true ? (
       <div class="internal-links">
-        <HeaderLink href={getLocaleUrl('/')}>{i18n.navs.home}</HeaderLink>
-        <HeaderLink href={getLocaleUrl('/projects')}>{i18n.navs.projects}</HeaderLink>
-        <HeaderLink href={getLocaleUrl('/contributing')}>{i18n.navs.contributing}</HeaderLink>
-        <HeaderLink href={getLocaleUrl('/about')}>{i18n.navs.about}</HeaderLink>
+        {navs.map(nav => (
+          <HeaderLink href={getLocaleUrl(nav.path)}>{i18n.navs[nav.key]}</HeaderLink>
+        ))}
       </div>
     ) : (
       <div style="min-height: 78px;"></div>
@@ -44,11 +57,6 @@ const getLocaleUrl = getRelativeLocaleUrl.bind(null, locale);
   h2 a,
   h2 a.active {
     text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
   nav a {
     padding: 1em 0.5em;
