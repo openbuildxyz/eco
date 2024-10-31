@@ -1,4 +1,6 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 import { I18N_CONFIG } from '../consts';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
@@ -16,7 +18,7 @@ const i18n = I18N_CONFIG[locale];
   <body>
     <Header hideNavs />
     <main>
-      <p style="text-align: center;">Sorry, only <a href="/zh/">Chinese version</a> is available for now.</p>
+      <p style="text-align: center;">Sorry, only <a href={getRelativeLocaleUrl('zh', '/')}>Chinese version</a> is available for now.</p>
     </main>
     <Footer />
   </body>

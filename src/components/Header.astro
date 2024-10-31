@@ -1,5 +1,6 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
+
 import { I18N_CONFIG } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 
@@ -10,8 +11,7 @@ interface Props {
 const { hideNavs = false } = Astro.props;
 const locale = (Astro.currentLocale || 'en') as 'en' | 'zh';
 const i18n = I18N_CONFIG[locale];
-const baseUrl = import.meta.env.BASE_URL;
-const getLocaleUrl = (path: string) => getRelativeLocaleUrl(locale, path, baseUrl ? { prependWith: baseUrl } : undefined);
+const getLocaleUrl = getRelativeLocaleUrl.bind(null, locale);
 ---
 
 <header>
