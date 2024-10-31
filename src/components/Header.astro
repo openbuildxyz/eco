@@ -1,57 +1,60 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import { SITE_TITLE, I18N_CONFIG } from '../consts';
+import { I18N_CONFIG } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 
 interface Props {
-  locale?: 'en' | 'zh';
+  hideNavs?: boolean;
 }
 
-const { locale = 'en' } = Astro.props;
+const { hideNavs = false } = Astro.props;
+const locale = (Astro.currentLocale || 'en') as 'en' | 'zh';
 const i18n = I18N_CONFIG[locale];
 const getLocaleUrl = getRelativeLocaleUrl.bind(null, locale);
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href={getLocaleUrl('/')}>{i18n.navs.home}</HeaderLink>
-      <HeaderLink href={getLocaleUrl('/projects')}>{i18n.navs.projects}</HeaderLink>
-			<HeaderLink href={getLocaleUrl('/contributing')}>{i18n.navs.contributing}</HeaderLink>
-			<HeaderLink href={getLocaleUrl('/about')}>{i18n.navs.about}</HeaderLink>
-		</div>
-	</nav>
+  <nav>
+    <h2><a href={getLocaleUrl('/')}>{i18n.site.title}</a></h2>
+    {hideNavs !== true && (
+      <div class="internal-links">
+        <HeaderLink href={getLocaleUrl('/')}>{i18n.navs.home}</HeaderLink>
+        <HeaderLink href={getLocaleUrl('/projects')}>{i18n.navs.projects}</HeaderLink>
+        <HeaderLink href={getLocaleUrl('/contributing')}>{i18n.navs.contributing}</HeaderLink>
+        <HeaderLink href={getLocaleUrl('/about')}>{i18n.navs.about}</HeaderLink>
+      </div>
+    )}
+  </nav>
 </header>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+  header {
+    margin: 0;
+    padding: 0 1em;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  }
+  h2 {
+    margin: 0;
+    font-size: 1em;
+  }
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    color: var(--black);
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+  nav a.active {
+    text-decoration: none;
+    border-bottom-color: var(--accent);
+  }
 </style>

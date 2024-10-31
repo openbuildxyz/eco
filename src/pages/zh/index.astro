@@ -1,21 +1,24 @@
 ---
+import { I18N_CONFIG } from '../../consts';
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+
+const locale = (Astro.currentLocale || 'en') as 'en' | 'zh';
+const i18n = I18N_CONFIG[locale];
 ---
 
 <!doctype html>
 <html lang="zh-CN" dir="ltr">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header locale="zh" />
-		<main>
-			<p>OpenBuild 是一个面向 Web3 开发者的开源社区。</p>
+  <head>
+    <BaseHead title={i18n.site.title} description={i18n.site.description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <p>OpenBuild 是一个面向 Web3 开发者的开源社区。</p>
       <p>我们致力于为开发者提供高质量的系统性内容和活动，同时连接 Web2 和 Web3，帮助开发者过渡到去中心化的网络，并通过提供必要的工具和资源，帮助开发者建立声誉体系，构建信任，创造商业机会。</p>
-		</main>
-		<Footer />
-	</body>
+    </main>
+    <Footer />
+  </body>
 </html>
