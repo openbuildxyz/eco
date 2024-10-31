@@ -4,6 +4,7 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import type { SupportedLocale, NavKey } from '@/types';
 import { I18N_CONFIG } from '@/constants/config';
 
+import logo from './logo.png';
 import HeaderLink from './HeaderLink.astro';
 
 interface Props {
@@ -28,9 +29,15 @@ const navs: SiteNav[] = [
 ];
 ---
 
-<header>
-  <nav class="flex items-center justify-between">
-    <h2><a href={getLocaleUrl('/')}>{i18n.site.title}</a></h2>
+<header class="m-0 px-5 bg-white shadow-md">
+  <nav class="max-w-screen-xl my-0 mx-auto flex items-center justify-between">
+    <div class="flex items-center">
+      <a class="size-10" href="https://openbuild.xyz" target="_blank" rel="noreferrer">
+        <img class="size-full" src={logo.src} alt="OpenBuild" />
+      </a>
+      <span class="w-[1px] h-6 ml-3 mr-3.5 bg-slate-300"></span>
+      <a class="text-2xl/none text-gray-800 hover:text-gray-500" href={getLocaleUrl('/')}>Eco</a>
+    </div>
     {hideNavs !== true ? (
       <div class="internal-links">
         {navs.map(nav => (
@@ -43,28 +50,13 @@ const navs: SiteNav[] = [
   </nav>
 </header>
 <style>
-  header {
-    margin: 0;
-    padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  }
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav a {
+  .internal-links a {
     padding: 1em 0.5em;
     color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none;
   }
-  nav a.active {
+  .internal-links a.active {
     text-decoration: none;
     border-bottom-color: var(--accent);
   }
