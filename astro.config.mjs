@@ -12,4 +12,9 @@ export default defineConfig({
     defaultLocale: 'en',
     locales: ['en', 'zh'],
   },
+  ...(process.env.NODE_ENV === 'production' ? {
+    site: 'https://openbuildxyz.github.io/',
+    base: 'eco',
+    trailingSlash: 'never',
+  } : undefined),
 });
