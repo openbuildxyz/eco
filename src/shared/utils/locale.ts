@@ -12,8 +12,12 @@ function setCurrentLocale(locale: string = defaultLocale) {
   currentLocale = locale as SupportedLocale;
 }
 
+function getDefaultLocale(): SupportedLocale {
+  return defaultLocale;
+}
+
 function unwrapLocalValue<VT = string>(data: LocaleValue<VT>, locale: SupportedLocale = currentLocale): VT {
   return data[locale] || data.en;
 }
 
-export { getCurrentLocale, setCurrentLocale, unwrapLocalValue };
+export { getCurrentLocale, setCurrentLocale, getDefaultLocale, unwrapLocalValue };

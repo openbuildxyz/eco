@@ -1,7 +1,15 @@
 const baseUrl = import.meta.env.BASE_URL;
 
-function resolvePath(path: string) {
-  return baseUrl === '/' ? path : `${baseUrl}${path}`;
+function isBaseUrlSet() {
+  return baseUrl !== '/';
 }
 
-export { resolvePath };
+function removeBaseUrl(path: string) {
+  return isBaseUrlSet() ? path.slice(baseUrl.length) : path;
+}
+
+function resolvePath(path: string) {
+  return isBaseUrlSet() ? `${baseUrl}${path}` : path;
+}
+
+export { removeBaseUrl, resolvePath };
