@@ -6,6 +6,8 @@ type BriefItem = {
 type HomeLocale = {
   heading: string;
   slogan: string;
+  contribute: string;
+  join: string;
   featured: string;
   highlights: string;
   growth: BriefItem;

@@ -7,6 +7,8 @@ const locales: LocaleValue<HomeLocale> = {
   en: {
     heading: I18N_CONFIG.en.site.title,
     slogan: 'Help ecological projects and contributors to achieve success.',
+    contribute: 'Contribute',
+    join: 'Join Ecosystem',
     highlights: 'What You Can Get',
     featured: 'Featured Projects',
     growth: {
@@ -25,6 +27,8 @@ const locales: LocaleValue<HomeLocale> = {
   zh: {
     heading: I18N_CONFIG.zh.site.title,
     slogan: '助力生态项目及参与共建的贡献者取得成功。',
+    contribute: '共建项目',
+    join: '加入生态',
     highlights: '你能获得',
     featured: '特色项目',
     growth: {

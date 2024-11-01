@@ -20,7 +20,7 @@ function HighlightList({ locale }: HighlightListProps) {
               <h3 className="grow m-0 text-xl font-semibold text-center">{brief.title}</h3>
             </CardHeader>
             <CardBody className="p-6 pt-1.5">
-              <p className="m-0 text-sm text-center">{brief.description}</p>
+              <p className="m-0 text-sm break-all">{brief.description}</p>
             </CardBody>
           </Card>
         );

@@ -6,6 +6,7 @@ import { FeaturedListView } from '~/project';
 import DefaultLayout from '../default';
 
 import { resolveLocale } from './helper';
+import ActionBar from './ActionBar';
 import Section from './Section.astro';
 import HighlightList from './HighlightList';
 
@@ -17,6 +18,7 @@ const locale = resolveLocale((Astro.currentLocale || 'en') as SupportedLocale);
     <div class="h-80 mb-16 flex flex-col items-center justify-center">
       <h1 class="mb-6 text-8xl font-extrabold">{locale.heading}</h1>
       <p class="m-0 text-2xl text-neutral-500">{locale.slogan}</p>
+      <ActionBar className="mt-12" locale={locale} client:visible />
     </div>
     <Section title={locale.highlights}>
       <HighlightList locale={locale} client:visible />
