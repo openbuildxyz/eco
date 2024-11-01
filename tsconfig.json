@@ -12,7 +12,6 @@
     }
   },
   "include": [
-    "src",
     "node_modules/@nextui-org/*"
   ]
 }
