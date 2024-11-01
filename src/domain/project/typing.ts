@@ -2,6 +2,10 @@ import type { LocaleValue } from '@/types';
 
 import type { Contributor } from '../contributor';
 
+type ProjectLocale = {
+  browseMore: string;
+};
+
 type GitHubRepo = {
   owner: string;
   name: string;
@@ -22,4 +26,4 @@ type Project = Omit<InternalProject, 'title' | 'description' | 'owners'> & {
   owners: Contributor[];
 };
 
-export type { InternalProject, Project };
+export type { ProjectLocale, InternalProject, Project };

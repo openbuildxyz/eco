@@ -1,13 +1,18 @@
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import { getCurrentLocale } from '@/utils';
 import {
   Card, CardHeader, CardBody, CardFooter,
   Avatar, Tooltip,
 } from '@/components/react';
 
 import type { Project } from '../../typing';
+import { resolveLocale } from '../../helper';
 
 type ProjectCardWidgetProps = {
   className?: string;
   dataSource: Project;
+  showMore?: boolean;
 };
 
 function resolveProjLink({ repo, homepage }: Project): string {
@@ -22,7 +27,7 @@ function resolveProjLink({ repo, homepage }: Project): string {
   return '';
 }
 
-function ProjectCardWidget({ dataSource }: ProjectCardWidgetProps) {
+function ProjectCardWidget({ dataSource, showMore = false }: ProjectCardWidgetProps) {
   const projLink = resolveProjLink(dataSource);
 
   return (
@@ -50,6 +55,16 @@ function ProjectCardWidget({ dataSource }: ProjectCardWidgetProps) {
           </Tooltip>
         ))}
       </CardFooter>
+      {showMore && (
+        <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/50 hover:bg-black/70 transition-all">
+          <a
+            className="px-4 leading-10 border border-current rounded-full text-white/70 hover:text-white transition-all"
+            href={getRelativeLocaleUrl(getCurrentLocale(), '/projects')}
+          >
+            <span>{resolveLocale('browseMore')}</span>
+          </a>
+        </div>
+      )}
     </Card>
   );
 }

@@ -1,6 +1,4 @@
 ---
-import type { SupportedLocale } from '@/types';
-
 import { FeaturedListView } from '~/project';
 
 import DefaultLayout from '../default';
@@ -9,7 +7,7 @@ import { resolveLocale } from './helper';
 import Section from './Section.astro';
 import HighlightList from './HighlightList';
 
-const locale = resolveLocale((Astro.currentLocale || 'en') as SupportedLocale);
+const locale = resolveLocale();
 ---
 
 <DefaultLayout>

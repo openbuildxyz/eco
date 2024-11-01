@@ -1,14 +1,21 @@
 ---
 import type { SupportedLocale } from '@/types';
 
-import { getFeaturedList } from '../../repository';
+import { getList, getFeaturedList } from '../../repository';
 import ProjectCardWidget from '../../widgets/project-card';
 
-const projects = getFeaturedList(Astro.currentLocale as SupportedLocale);
+const locale = Astro.currentLocale as SupportedLocale;
+const total = getList(locale).length;
+const projects = getFeaturedList(locale);
+const count = projects.length;
 ---
 
 <div class="grid grid-cols-4 gap-4">
-  {projects.map(proj => (
-    <ProjectCardWidget dataSource={proj} client:visible />
+  {projects.map((proj, idx) => (
+    <ProjectCardWidget
+      dataSource={proj}
+      showMore={total > count && idx === count - 1}
+      client:visible
+    />
   ))}
 </div>

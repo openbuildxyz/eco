@@ -1,6 +1,8 @@
 ---
 import type { SupportedLocale } from '@/types';
 import { I18N_CONFIG } from '@/constants/config';
+import { setCurrentLocale } from '@/utils';
+import AppProvider from '@/components/react/app-provider';
 
 import BaseHead from './BaseHead.astro';
 import Header from './Header.astro';
@@ -20,6 +22,8 @@ const {
   title = i18n.site.title,
   description = i18n.site.description,
 } = meta;
+
+setCurrentLocale(locale);
 ---
 
 <!doctype html>
@@ -29,6 +33,7 @@ const {
     <slot name="custom-style" />
   </head>
   <body>
+    <AppProvider locale={locale} client:only="react" />
     <Header style="height: 64px; margin-bottom: -64px;" />
     <main class="min-h-full m-auto pt-[120px] pb-[236px] px-5">
       <slot />

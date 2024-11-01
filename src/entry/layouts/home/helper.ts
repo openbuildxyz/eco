@@ -1,4 +1,5 @@
-import type { SupportedLocale, LocaleValue } from '@/types';
+import type { LocaleValue } from '@/types';
+import { getCurrentLocale } from '@/utils';
 
 import type { HomeLocale } from './typing';
 
@@ -37,8 +38,8 @@ const locales: LocaleValue<HomeLocale> = {
   },
 };
 
-function resolveLocale(locale: SupportedLocale): HomeLocale {
-  return locales[locale];
+function resolveLocale(): HomeLocale {
+  return locales[getCurrentLocale()];
 }
 
 export { resolveLocale };
