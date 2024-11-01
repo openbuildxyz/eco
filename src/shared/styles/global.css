@@ -29,17 +29,21 @@
   font-style: normal;
   font-display: swap;
 }
+html,
 body {
-  font-family: 'Atkinson', sans-serif;
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+body {
+  font-family: 'Atkinson', sans-serif;
   text-align: left;
   background: linear-gradient(var(--gray-gradient)) no-repeat;
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.7;
 }
 h1,
@@ -119,14 +123,6 @@ blockquote {
 hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-  main {
-    padding: 1em;
-  }
 }
 
 .sr-only {

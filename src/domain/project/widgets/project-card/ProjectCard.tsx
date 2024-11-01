@@ -29,7 +29,7 @@ function ProjectCardWidget({ dataSource }: ProjectCardWidgetProps) {
     <Card>
       <CardHeader className="leading-none">
         {projLink ? (
-          <a href={projLink} target="_blank" rel="nofollow external">{dataSource.title}</a>
+          <a className="text-lg/tight font-semibold" href={projLink} target="_blank" rel="nofollow external">{dataSource.title}</a>
         ) : dataSource.title}
       </CardHeader>
       <CardBody className="py-0 text-sm font-light break-all">{dataSource.description}</CardBody>

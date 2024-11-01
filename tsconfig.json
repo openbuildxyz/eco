@@ -6,7 +6,9 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/shared/*"]
+      "@/*": ["./src/shared/*"],
+      "~/*": ["./src/domain/*"],
+      "#/*": ["./src/entry/*"]
     }
   }
 }

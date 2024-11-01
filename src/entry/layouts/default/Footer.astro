@@ -1,8 +1,13 @@
 ---
+interface Props {
+  style?: string;
+}
+
+const { style } = Astro.props;
 const today = new Date();
 ---
 
-<footer>
+<footer style={style}>
   &copy; {today.getFullYear()} Your name here. All rights reserved.
 </footer>
 <style>

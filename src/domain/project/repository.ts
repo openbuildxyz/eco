@@ -1,4 +1,5 @@
 import type { SupportedLocale } from '@/types';
+import { OFFICIAL_WEBSITE_URL } from '@/constants/config';
 import { unwrapLocalValue } from '@/utils';
 
 import { getList as getContributorList } from '../contributor';
@@ -16,7 +17,7 @@ const projects: InternalProject[] = [
       zh: 'Help ✦ Developers ✦ get on the Success Way to Web3',
     },
     owners: ['zhang-wenchao', 'ourai'],
-    homepage: 'https://openbuild.xyz',
+    homepage: OFFICIAL_WEBSITE_URL,
   },
   {
     id: 'amphitheatre',

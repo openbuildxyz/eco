@@ -3,10 +3,10 @@
 
 import type { LocaleValue, LocaleConfig } from '../types';
 
-export const SITE_TITLE = 'OpenBuild Ecosystem';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+const SITE_TITLE = 'OpenBuild Ecosystem';
+const SITE_DESCRIPTION = 'Welcome to my website!';
 
-export const I18N_CONFIG: LocaleValue<LocaleConfig> = {
+const I18N_CONFIG: LocaleValue<LocaleConfig> = {
   en: {
     site: {
       title: SITE_TITLE,
@@ -31,4 +31,14 @@ export const I18N_CONFIG: LocaleValue<LocaleConfig> = {
       about: '关于',
     },
   },
+};
+
+const OFFICIAL_WEBSITE_URL = 'https://openbuild.xyz';
+const ECOSYSTEM_WEBSITE_URL = import.meta.env.SITE;
+
+export {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  I18N_CONFIG,
+  OFFICIAL_WEBSITE_URL, ECOSYSTEM_WEBSITE_URL,
 };

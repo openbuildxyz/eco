@@ -29,10 +29,10 @@ const {
     <slot name="custom-style" />
   </head>
   <body>
-    <Header hideNavs={locale !== 'zh'} />
-    <main class="m-auto py-14 px-5">
+    <Header style="height: 64px; margin-bottom: -64px;" hideNavs={locale !== 'zh'} />
+    <main class="min-h-full m-auto pt-[120px] pb-[236px] px-5">
       <slot />
     </main>
-    <Footer />
+    <Footer style="height: 180px; margin-top: -180px;" />
   </body>
 </html>

@@ -2,12 +2,13 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import type { SupportedLocale, NavKey } from '@/types';
-import { I18N_CONFIG } from '@/constants/config';
+import { I18N_CONFIG, OFFICIAL_WEBSITE_URL } from '@/constants/config';
 
 import logo from './logo.png';
 import HeaderLink from './HeaderLink.astro';
 
 interface Props {
+  style?: string;
   hideNavs?: boolean;
 }
 
@@ -16,7 +17,7 @@ type SiteNav = {
   path: string;
 }
 
-const { hideNavs = false } = Astro.props;
+const { style, hideNavs = false } = Astro.props;
 const locale = (Astro.currentLocale || 'en') as SupportedLocale;
 const i18n = I18N_CONFIG[locale];
 const getLocaleUrl = getRelativeLocaleUrl.bind(null, locale);
@@ -29,24 +30,24 @@ const navs: SiteNav[] = [
 ];
 ---
 
-<header class="m-0 px-5 bg-white shadow-md">
-  <nav class="max-w-screen-xl my-0 mx-auto flex items-center justify-between">
+<header class="flex items-center m-0 px-5 bg-white shadow-md" style={style}>
+  <nav class="max-w-screen-xl my-0 mx-auto flex grow items-center justify-between">
     <div class="flex items-center">
-      <a class="size-10" href="https://openbuild.xyz" target="_blank" rel="noreferrer">
+      <a class="size-10" href={OFFICIAL_WEBSITE_URL} target="_blank" rel="noreferrer">
         <img class="size-full" src={logo.src} alt="OpenBuild" />
       </a>
       <span class="w-[1px] h-6 ml-3 mr-3.5 bg-slate-300"></span>
       <a class="text-2xl/none text-gray-800 hover:text-gray-500" href={getLocaleUrl('/')}>Eco</a>
     </div>
-    {hideNavs !== true ? (
-      <div class="internal-links">
-        {navs.map(nav => (
-          <HeaderLink href={getLocaleUrl(nav.path)}>{i18n.navs[nav.key]}</HeaderLink>
-        ))}
-      </div>
-    ) : (
-      <div style="min-height: 78px;"></div>
-    )}
+    <div class="internal-links">
+      {hideNavs !== true && (
+        <>
+          {navs.map(nav => (
+            <HeaderLink href={getLocaleUrl(nav.path)}>{i18n.navs[nav.key]}</HeaderLink>
+          ))}
+        </>
+      )}
+    </div>
   </nav>
 </header>
 <style>
