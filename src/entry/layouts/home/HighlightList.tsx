@@ -15,7 +15,7 @@ function HighlightList({ locale }: HighlightListProps) {
         const brief = locale[key];
 
         return (
-          <Card radius="sm" shadow="sm">
+          <Card shadow="sm">
             <CardHeader className="p-6 pb-1.5">
               <h3 className="grow m-0 text-xl font-semibold text-center">{brief.title}</h3>
             </CardHeader>
