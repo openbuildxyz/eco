@@ -13,7 +13,12 @@ export default defineConfig({
   } : {
     site: 'https://example.com',
   }),
-  integrations: [mdx(), sitemap(), react(), tailwind()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    react({ experimentalReactChildren: true }),
+    tailwind(),
+  ],
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh'],

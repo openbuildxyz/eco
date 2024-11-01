@@ -1,11 +1,6 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
-import DefaultLayout from '#/layouts/default';
+import HomeLayout from '#/layouts/home';
 ---
 
-<DefaultLayout>
-  <div class="max-w-screen-xl mx-auto">
-    <p style="text-align: center;">Sorry, only <a href={getRelativeLocaleUrl('zh', '/')}>Chinese version</a> is available for now.</p>
-  </div>
-</DefaultLayout>
+<HomeLayout>
+</HomeLayout>

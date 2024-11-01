@@ -1,0 +1,27 @@
+---
+import type { SupportedLocale } from '@/types';
+
+import { FeaturedListView } from '~/project';
+
+import DefaultLayout from '../default';
+
+import { resolveLocale } from './helper';
+import HighlightList from './HighlightList';
+
+
+const locale = resolveLocale((Astro.currentLocale || 'en') as SupportedLocale);
+---
+
+<DefaultLayout>
+  <article class="max-w-screen-xl mx-auto">
+    <slot />
+    <section>
+      <h2 class="mb-6 text-3xl font-bold text-center">{locale.highlights}</h2>
+      <HighlightList locale={locale} client:visible />
+    </section>
+    <section class="mt-16">
+      <h2 class="mb-6 text-3xl font-bold text-center">{locale.featured}</h2>
+      <FeaturedListView />
+    </section>
+  </article>
+</DefaultLayout>
