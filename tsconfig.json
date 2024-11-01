@@ -11,5 +11,8 @@
       "#/*": ["./src/entry/*"]
     }
   },
-  "include": ["node_modules/@nextui-org/*"]
+  "include": [
+    "src",
+    "node_modules/@nextui-org/*"
+  ]
 }

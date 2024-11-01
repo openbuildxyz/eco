@@ -1,9 +1,12 @@
 import type { SupportedLocale, LocaleValue } from '@/types';
+import { I18N_CONFIG } from '@/constants/config';
 
 import type { HomeLocale } from './typing';
 
 const locales: LocaleValue<HomeLocale> = {
   en: {
+    heading: I18N_CONFIG.en.site.title,
+    slogan: 'Help ecological projects and contributors to achieve success.',
     highlights: 'What You Can Get',
     featured: 'Featured Projects',
     growth: {
@@ -20,6 +23,8 @@ const locales: LocaleValue<HomeLocale> = {
     },
   },
   zh: {
+    heading: I18N_CONFIG.zh.site.title,
+    slogan: '助力生态项目及参与共建的贡献者取得成功。',
     highlights: '你能获得',
     featured: '特色项目',
     growth: {
