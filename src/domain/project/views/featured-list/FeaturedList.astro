@@ -1,0 +1,14 @@
+---
+import type { SupportedLocale } from '@/types';
+
+import { getFeaturedList } from '../../repository';
+import ProjectCardWidget from '../../widgets/project-card';
+
+const projects = getFeaturedList(Astro.currentLocale as SupportedLocale);
+---
+
+<div class="grid grid-cols-4 gap-4">
+  {projects.map(proj => (
+    <ProjectCardWidget dataSource={proj} client:visible />
+  ))}
+</div>
