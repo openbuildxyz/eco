@@ -2,10 +2,10 @@
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import type { SupportedLocale, NavKey } from '@/types';
-import { I18N_CONFIG, OFFICIAL_WEBSITE_URL } from '@/constants/config';
+import { I18N_CONFIG } from '@/constants/config';
 import { Divider } from '@/components/react';
 
-import logo from './logo.png';
+import BrandLogo from './BrandLogo.astro';
 import HeaderLink from './HeaderLink.astro';
 import LocaleSelector from './LocaleSelector';
 
@@ -26,22 +26,14 @@ const i18n = I18N_CONFIG[locale];
 const getLocaleUrl = getRelativeLocaleUrl.bind(null, locale);
 
 const navs: SiteNav[] = [
-  { key: 'home', path: '/' },
   { key: 'projects', path: '/projects' },
-  // { key: 'contributing', path: '/contributing' },
-  // { key: 'about', path: '/about' },
+  { key: 'guides', path: '/guides' },
 ];
 ---
 
 <header class="flex items-center m-0 px-5 bg-white shadow-md" style={style}>
   <nav class="max-w-screen-xl my-0 mx-auto flex grow items-center justify-between">
-    <div class="flex items-center">
-      <a class="size-10" href={OFFICIAL_WEBSITE_URL} target="_blank" rel="noreferrer">
-        <img class="size-full" src={logo.src} alt="OpenBuild" />
-      </a>
-      <span class="w-[1px] h-6 ml-3 mr-3.5 bg-slate-300"></span>
-      <a class="text-2xl/none text-gray-800 hover:text-gray-500" href={getLocaleUrl('/')}>Eco</a>
-    </div>
+    <BrandLogo />
     <div class="flex items-center gap-3">
       <div class="internal-links">
         {hideNavs !== true && (

@@ -13,10 +13,8 @@ const I18N_CONFIG: LocaleValue<LocaleConfig> = {
       description: SITE_DESCRIPTION,
     },
     navs: {
-      home: 'Home',
       projects: 'Projects',
-      contributing: 'Contributing',
-      about: 'About',
+      guides: 'Guides',
     },
   },
   zh: {
@@ -25,10 +23,8 @@ const I18N_CONFIG: LocaleValue<LocaleConfig> = {
       description: '与 OpenBuild 相关的社区生态项目',
     },
     navs: {
-      home: '首页',
       projects: '项目',
-      contributing: '贡献',
-      about: '关于',
+      guides: '指南',
     },
   },
 };

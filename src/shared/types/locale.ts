@@ -8,10 +8,8 @@ type SiteConfig = {
 };
 
 type NavConfig = {
-  home: string;
   projects: string;
-  contributing: string;
-  about: string;
+  guides: string;
 };
 
 type LocaleConfig = {
