@@ -57,7 +57,7 @@ function LocaleSelector({ pathname }: LocaleSelectorProps) {
         selectedKeys={selectedKeys}
         onSelectionChange={({ currentKey }) => changeLocale(currentKey as SupportedLocale)}
       >
-        {item => (
+        {(item: LocaleOption) => (
           <DropdownItem key={item.locale}>{item.text}</DropdownItem>
         )}
       </DropdownMenu>
