@@ -1,5 +1,5 @@
 export {
-  Button,
+  Button, Link,
   Dropdown, DropdownTrigger, DropdownMenu, DropdownItem,
   Avatar,
   Tooltip,

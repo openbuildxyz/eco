@@ -1,6 +1,6 @@
 ---
-title: Introduction
+title: 简介
 description: Tell you something.
 ---
 
-TBD
+等等

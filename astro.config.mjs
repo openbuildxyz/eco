@@ -23,7 +23,25 @@ export default defineConfig({
       title: 'OpenBuild Ecosystem',
       components: {
         SiteTitle: './src/entry/layouts/default/BrandLogo.astro',
+        SocialIcons: './src/entry/layouts/default/NavMenu.astro',
       },
+      sidebar: [
+        {
+          label: 'Getting Started',
+          translations: { zh: '开始' },
+          items: [
+            'guides',
+          ],
+        },
+        {
+          label: 'Building Ecosystem',
+          translations: { zh: '构建生态' },
+          items: [
+            'guides/how-to-contribute',
+            'guides/how-to-join',
+          ],
+        },
+      ],
     }),
   ],
 });

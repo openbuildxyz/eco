@@ -1,6 +1,8 @@
 import clsx from 'clsx';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
-import { Button } from '@/components/react';
+import { getCurrentLocale } from '@/utils';
+import { Button, Link } from '@/components/react';
 import { ArrowRight } from '@/components/icon';
 
 import type { HomeLocale } from './typing';
@@ -11,23 +13,26 @@ type ActionBarProps = {
 };
 
 function ActionBar({ className, locale }: ActionBarProps) {
-  const handleClick = () => alert(';-D');
+  const getLocaleUrl = getRelativeLocaleUrl.bind(null, getCurrentLocale());
 
   return (
     <div className={clsx('flex gap-4', className)}>
       <Button
+        as={Link}
+        href={getLocaleUrl('/guides/how-to-contribute/')}
         size="lg"
         color="primary"
+        variant="solid"
         endContent={<ArrowRight className="size-5" />}
-        onClick={handleClick}
       >
         {locale.contribute}
       </Button>
       <Button
+        as={Link}
+        href={getLocaleUrl('/guides/how-to-join/')}
         size="lg"
         color="primary"
         variant="bordered"
-        onClick={handleClick}
       >
         {locale.join}
       </Button>
