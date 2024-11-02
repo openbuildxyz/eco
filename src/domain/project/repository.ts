@@ -159,7 +159,7 @@ const projects: InternalProject[] = [
     },
     description: {
       en: 'Vue & React progressive framework for front-end of web-based management systems.',
-      zh: '渐进式配置驱动前端应用开发与治理框架，让业务开发者将关注点聚焦于业务本身而非技术细节。',
+      zh: '渐进式知识驱动前端应用开发与治理框架，让业务开发者将关注点聚焦于业务本身而非技术细节。',
     },
     owners: ['ourai'],
     homepage: 'https://handiejs.github.io',

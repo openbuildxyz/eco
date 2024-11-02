@@ -23,7 +23,7 @@ const locale = resolveLocale((Astro.currentLocale || 'en') as SupportedLocale);
     <Section title={locale.highlights}>
       <HighlightList locale={locale} client:visible />
     </Section>
-    <Section title={locale.featured} class="mt-16">
+    <Section title={locale.featured} class="mt-24">
       <FeaturedListView />
     </Section>
   </article>

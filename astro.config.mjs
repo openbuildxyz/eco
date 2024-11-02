@@ -21,6 +21,9 @@ export default defineConfig({
     tailwind(),
     starlight({
       title: 'OpenBuild Ecosystem',
+      customCss: [
+        './src/shared/styles/guide.css',
+      ],
       components: {
         SiteTitle: './src/entry/layouts/default/BrandLogo.astro',
         SocialIcons: './src/entry/layouts/default/NavMenu.astro',
@@ -42,6 +45,9 @@ export default defineConfig({
           ],
         },
       ],
+      editLink: {
+        baseUrl: 'https://github.com/openbuildxyz/eco/edit/main',
+      },
     }),
   ],
 });
