@@ -1,7 +1,8 @@
 import type { SupportedLocale } from '@/types';
 import { OFFICIAL_WEBSITE_URL } from '@/constants/config';
-import { unwrapLocalValue } from '@/utils';
+import { getCurrentLocale, unwrapLocalValue } from '@/utils';
 
+import { type TagType, getList as getTagList } from '../tag';
 import { getList as getContributorList } from '../contributor';
 import type { InternalProject, Project } from './typing';
 
@@ -206,4 +207,8 @@ function getFeaturedList(locale: SupportedLocale): Project[] {
   return featured.map(id => resolveProject(projectMap[id], locale));
 }
 
-export { getList, getFeaturedList };
+function getProjectTagList(type?: TagType) {
+  return getTagList(getCurrentLocale(), type);
+}
+
+export { getList, getFeaturedList, getProjectTagList };

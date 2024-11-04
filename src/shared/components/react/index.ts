@@ -1,5 +1,6 @@
 export {
   Button, Link,
+  Accordion, AccordionItem,
   Dropdown, DropdownTrigger, DropdownMenu, DropdownItem,
   Avatar,
   Tooltip,

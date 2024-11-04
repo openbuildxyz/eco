@@ -18,6 +18,7 @@ type InternalProject = {
   repo?: GitHubRepo | string;
   homepage?: string;
   owners: Contributor['github']['username'][];
+  tags?: string[];
 };
 
 type Project = Omit<InternalProject, 'title' | 'description' | 'owners'> & {

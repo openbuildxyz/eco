@@ -2,13 +2,9 @@
 import type { SupportedLocale } from '@/types';
 
 import { getList } from '../../repository';
-import ProjectCardWidget from '../../widgets/project-card';
+import ProjectListWidget from '../../widgets/project-list';
 
 const projects = getList(Astro.currentLocale as SupportedLocale);
 ---
 
-<div class="grid grid-cols-4 gap-4">
-  {projects.map(proj => (
-    <ProjectCardWidget dataSource={proj} client:visible />
-  ))}
-</div>
+<ProjectListWidget dataSource={projects} client:visible />
