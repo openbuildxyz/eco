@@ -4,10 +4,14 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import starlight from '@astrojs/starlight';
 
+const deployed = process.env.NODE_ENV === 'production';
+const prodBase = 'eco';
+const faviconPath = '/favicon.png';
+
 export default defineConfig({
-  ...(process.env.NODE_ENV === 'production' ? {
+  ...(deployed ? {
     site: 'https://openbuildxyz.github.io',
-    base: 'eco',
+    base: prodBase,
     trailingSlash: 'never',
   } : {
     site: 'https://example.com',
@@ -21,6 +25,7 @@ export default defineConfig({
     tailwind(),
     starlight({
       title: 'OpenBuild Ecosystem',
+      favicon: deployed ? `/${prodBase}${faviconPath}` : faviconPath,
       customCss: [
         './src/shared/styles/guide.css',
       ],
