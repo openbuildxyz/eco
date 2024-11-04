@@ -34,6 +34,8 @@ export default defineConfig({
           translations: { zh: '开始' },
           items: [
             'guides',
+            // 'guides/team',
+            // 'guides/code-of-conduct',
           ],
         },
         {

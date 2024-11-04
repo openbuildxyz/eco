@@ -39,8 +39,8 @@ description: 介绍下 OpenBuild 体系。
 
 由此可见，OpenBuild 生态的主题是：
 
-- **[共建](/zh/guides/how-to-contribute/)**——或是与他人一起借助项目实战变得更强，或是为了自己认可的想法而共同打造产品；
-- **[孵化](/zh/guides/how-to-join/)**——自己发起的项目需要得到 OpenBuild 的帮助，且能通过某种方式回馈 OpenBuild 的付出。
+- **[共建](/eco/zh/guides/how-to-contribute/)**——或是与他人一起借助项目实战变得更强，或是为了自己认可的想法而共同打造产品；
+- **[孵化](/eco/zh/guides/how-to-join/)**——自己发起的项目需要得到 OpenBuild 的帮助，且能通过某种方式回馈 OpenBuild 的付出。
 
 这不仅仅是进入「OpenBuild 体系」这个世界的另一入口，也是与官网相辅相成，在背后助其发展的强大后盾！
 
