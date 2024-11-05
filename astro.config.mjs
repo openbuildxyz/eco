@@ -51,6 +51,7 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/openbuildxyz/eco/edit/main',
       },
+      lastUpdated: true,
     }),
   ],
 });
