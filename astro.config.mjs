@@ -44,7 +44,7 @@ export default defineConfig({
           translations: { zh: '构建生态' },
           items: [
             'guides/how-to-contribute',
-            'guides/how-to-join',
+            // 'guides/how-to-join',
           ],
         },
       ],
