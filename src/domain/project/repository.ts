@@ -42,6 +42,7 @@ const projects: InternalProject[] = [
     },
     owners: ['wangeguo'],
     homepage: 'https://amphitheatre.app',
+    tags: ['pluggable', 'backend', 'rust'],
   },
   {
     id: 'faucet',
@@ -136,7 +137,7 @@ const projects: InternalProject[] = [
     },
     owners: ['smallfu6'],
     homepage: 'https://github.com/Unblock-Chain',
-    tags: ['web3'],
+    tags: ['web3', 'go'],
   },
   {
     id: 'ohw',
@@ -146,7 +147,7 @@ const projects: InternalProject[] = [
     },
     owners: ['zhang-wenchao'],
     homepage: 'https://github.com/butterfly-communtiy',
-    tags: ['web3'],
+    tags: ['web3', 'c'],
   },
   {
     id: 'ohwAlgorithm',
@@ -160,6 +161,7 @@ const projects: InternalProject[] = [
     },
     owners: ['septshep'],
     repo: { owner: 'butterfly-communtiy', name: 'ohw-algorithm' },
+    tags: ['rust', 'c'],
   },
   {
     id: 'handie',

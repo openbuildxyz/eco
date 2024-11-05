@@ -44,6 +44,18 @@ const techTags: InternalTag[] = ([
     id: 'vue',
     text: { en: 'Vue', zh: 'Vue' },
   },
+  {
+    id: 'rust',
+    text: { en: 'Rust', zh: 'Rust' },
+  },
+  {
+    id: 'go',
+    text: { en: 'Go', zh: 'Go' },
+  },
+  {
+    id: 'c',
+    text: { en: 'C', zh: 'C' },
+  },
 ] as UntypedTag[]).map(tag => ({ ...tag, type: 'tech' }));
 
 const generalTags: InternalTag[] = [];

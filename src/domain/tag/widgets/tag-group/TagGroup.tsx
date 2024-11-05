@@ -22,6 +22,7 @@ function TagGroupWidget({ className, tags = [] }: TagGroupWidgetProps) {
         return (
           <Chip
             key={id}
+            className="border-1"
             size="sm"
             variant={tag.type === 'category' ? 'solid' : 'bordered'}
             color={['category', 'domain'].includes(tag.type) ? 'primary' : 'default'}

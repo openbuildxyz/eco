@@ -19,11 +19,20 @@ function ActionBar({ className, locale }: ActionBarProps) {
     <div className={clsx('flex gap-4', className)}>
       <Button
         as={Link}
-        href={getLocaleUrl('/guides/how-to-contribute/')}
+        href={getLocaleUrl('/guides/')}
         size="lg"
         color="primary"
         variant="solid"
         endContent={<ArrowRight className="size-5" />}
+      >
+        {locale.getStarted}
+      </Button>
+      <Button
+        as={Link}
+        href={getLocaleUrl('/guides/how-to-contribute/')}
+        size="lg"
+        color="primary"
+        variant="bordered"
       >
         {locale.contribute}
       </Button>
