@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/react';
 import { Filter } from '@/components/icon';
 
-import { type TagId, type TagTypeId, TagFilterWidget } from '../../../tag';
+import { type TagId, type TagTypeId, getTagTypes, getTypeMap, TagFilterWidget } from '../../../tag';
 import type { Project } from '../../typing';
 import ProjectCardWidget from '../project-card';
 
@@ -14,10 +14,22 @@ type ProjectListWidgetProps = {
 
 type FilterTagMap = Partial<Record<TagTypeId, TagId[]>>;
 
+const typeMap = getTypeMap();
+
 function filterByTags(dataSource: Project[], filters: FilterTagMap) {
   const tagMap: Record<string, true> = Object.values(filters).reduce((p, tags) => ({ ...p, ...tags.reduce((_p, tag) => ({ ..._p, [tag]: true }), {}) }), {});
 
-  return Object.keys(tagMap).length > 0 ? dataSource.filter(({ tags }) => tags && tags.some(tag => tagMap[tag])) : dataSource;
+  let filtered = dataSource.slice();
+
+  getTagTypes().forEach(({ id }) => {
+    if ((filters[id] || []).length > 0) {
+      const availableTagMap: Record<string, true> = typeMap[id].reduce((p, t) => ({ ...p, [t.id]: true }), {});
+
+      filtered = filtered.filter(({ tags }) => !!tags && tags.some(tag => availableTagMap[tag] && tagMap[tag]));
+    }
+  });
+
+  return filtered;
 }
 
 function ProjectListWidget({ dataSource }: ProjectListWidgetProps) {
@@ -36,7 +48,11 @@ function ProjectListWidget({ dataSource }: ProjectListWidgetProps) {
       <div className="flex items-center justify-between mb-4">
         <div><span className="font-semibold">{count}</span> item{count !== 1 ? 's' : ''} found</div>
         <div>
-          <Button variant="light" isIconOnly onClick={() => setFilterable(!filterable)}>
+          <Button
+            variant={filterable ? 'solid' : 'light'}
+            isIconOnly
+            onClick={() => setFilterable(!filterable)}
+          >
             <Filter className="size-4" />
           </Button>
         </div>
