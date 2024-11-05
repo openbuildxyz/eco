@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { useCheckbox, Chip, VisuallyHidden, CheckboxGroup, tv } from '@nextui-org/react';
+import { useCheckbox, tv } from '@nextui-org/react';
 
-import type { TagId, Tag } from '../../../tag';
+import { Chip, VisuallyHidden, CheckboxGroup } from '@/components/react';
 
-type TagGroupProps = {
+import type { TagId, Tag } from '../../typing';
+
+type CheckableTagGroupProps = {
   tags: Tag[];
   onChange: (tags: TagId[]) => void;
 };
@@ -62,7 +64,7 @@ const CustomCheckbox = (props: React.PropsWithChildren<any>) => {
   );
 }
 
-function TagGroup({ tags, onChange }: TagGroupProps) {
+function CheckableTagGroup({ tags, onChange }: CheckableTagGroupProps) {
   const [groupSelected, setGroupSelected] = useState<TagId[]>([]);
 
   const handleChange = (ids: TagId[]) => {
@@ -79,4 +81,4 @@ function TagGroup({ tags, onChange }: TagGroupProps) {
   );
 }
 
-export default TagGroup;
+export default CheckableTagGroup;

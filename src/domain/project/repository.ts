@@ -1,8 +1,7 @@
 import type { SupportedLocale } from '@/types';
 import { OFFICIAL_WEBSITE_URL } from '@/constants/config';
-import { getCurrentLocale, unwrapLocalValue } from '@/utils';
+import { unwrapLocalValue } from '@/utils';
 
-import { type TagType, getList as getTagList } from '../tag';
 import { getList as getContributorList } from '../contributor';
 import type { InternalProject, Project } from './typing';
 
@@ -19,7 +18,7 @@ const projects: InternalProject[] = [
     },
     owners: ['zhang-wenchao', 'ourai'],
     homepage: OFFICIAL_WEBSITE_URL,
-    tags: ['web3', 'frontend', 'backend', 'react'],
+    tags: ['app', 'web3', 'react'],
   },
   {
     id: 'openbuildeco',
@@ -29,7 +28,7 @@ const projects: InternalProject[] = [
     },
     owners: ['ourai'],
     repo: { owner: 'openbuildxyz', name: 'eco' },
-    tags: ['frontend', 'react'],
+    tags: ['app', 'frontend', 'react'],
   },
   {
     id: 'amphitheatre',
@@ -57,6 +56,7 @@ const projects: InternalProject[] = [
     owners: [],
     repo: 'https://github.com/faucet-terminal',
     homepage: 'https://faucet.openbuild.xyz',
+    tags: ['app', 'web3'],
   },
   {
     id: 'answerWalletConnector',
@@ -69,6 +69,7 @@ const projects: InternalProject[] = [
       zh: '一个支持用 Web3 钱包授权的 Apache Answer 插件。',
     },
     owners: ['i-Lucifer', 'ourai'],
+    tags: ['pluggable', 'web3', 'react'],
   },
   {
     id: 'web3Packages',
@@ -82,6 +83,7 @@ const projects: InternalProject[] = [
     },
     owners: ['tokenlin'],
     homepage: 'https://github.com/web3packages',
+    tags: ['semiFinished', 'web3'],
   },
   {
     id: 'web3Insights',
@@ -96,7 +98,7 @@ const projects: InternalProject[] = [
     owners: ['pseudoyu'],
     repo: { owner: 'pseudoyu', name: 'Web3Insights' },
     homepage: 'https://web3insights.app',
-    tags: ['frontend', 'web3'],
+    tags: ['app', 'web3', 'react'],
   },
   {
     id: 'accordingWork',
@@ -111,7 +113,7 @@ const projects: InternalProject[] = [
     owners: ['wfnuser'],
     repo: { owner: 'YoubetDao', name: 'youbet-task' },
     homepage: 'https://according.work',
-    tags: ['frontend', 'web3'],
+    tags: ['app', 'web3', 'react'],
   },
   {
     id: 'w5Link',
@@ -120,7 +122,7 @@ const projects: InternalProject[] = [
       zh: 'W5.Link',
     },
     owners: ['septshep'],
-    tags: ['frontend', 'backend', 'web3'],
+    tags: ['app', 'web3', 'react'],
   },
   {
     id: 'gasWait',
@@ -134,6 +136,7 @@ const projects: InternalProject[] = [
     },
     owners: ['smallfu6'],
     homepage: 'https://github.com/Unblock-Chain',
+    tags: ['web3'],
   },
   {
     id: 'ohw',
@@ -143,6 +146,7 @@ const projects: InternalProject[] = [
     },
     owners: ['zhang-wenchao'],
     homepage: 'https://github.com/butterfly-communtiy',
+    tags: ['web3'],
   },
   {
     id: 'ohwAlgorithm',
@@ -169,7 +173,7 @@ const projects: InternalProject[] = [
     },
     owners: ['ourai'],
     homepage: 'https://handiejs.github.io',
-    tags: ['frontend', 'react', 'vue'],
+    tags: ['semiFinished', 'frontend'],
   },
   {
     id: 'petals',
@@ -183,7 +187,7 @@ const projects: InternalProject[] = [
     },
     owners: ['ourai'],
     homepage: 'https://petals-ui.github.io',
-    tags: ['frontend', 'react', 'vue'],
+    tags: ['semiFinished', 'frontend'],
   },
 ];
 
@@ -214,8 +218,4 @@ function getFeaturedList(locale: SupportedLocale): Project[] {
   return featured.map(id => resolveProject(projectMap[id], locale));
 }
 
-function getProjectTagList(type?: TagType) {
-  return getTagList(getCurrentLocale(), type);
-}
-
-export { getList, getFeaturedList, getProjectTagList };
+export { getList, getFeaturedList };

@@ -1,5 +1,5 @@
 export {
-  Button, Link,
+  Button, Link, Chip, CheckboxGroup, VisuallyHidden,
   Accordion, AccordionItem,
   Dropdown, DropdownTrigger, DropdownMenu, DropdownItem,
   Avatar,

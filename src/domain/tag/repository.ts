@@ -1,9 +1,24 @@
 import type { SupportedLocale } from '@/types';
 import { unwrapLocalValue } from '@/utils';
 
-import type { TagType, InternalTag, Tag } from './typing';
+import type { TagTypeId, InternalTag, Tag } from './typing';
 
 type UntypedTag = Omit<InternalTag, 'type'>;
+
+const categoryTags: InternalTag[] = ([
+  {
+    id: 'app',
+    text: { en: 'Apps/Sites', zh: '应用/网站' },
+  },
+  {
+    id: 'pluggable',
+    text: { en: 'Services/Plugins', zh: '服务/插件' },
+  },
+  {
+    id: 'semiFinished',
+    text: { en: 'Libraries/Frameworks', zh: '库/框架' },
+  },
+] as UntypedTag[]).map(tag => ({ ...tag, type: 'category' }))
 
 const domainTags: InternalTag[] = ([
   {
@@ -33,19 +48,24 @@ const techTags: InternalTag[] = ([
 
 const generalTags: InternalTag[] = [];
 
-const typedTagMap: Record<TagType, InternalTag[]> = {
+const typedTagMap: Record<TagTypeId, InternalTag[]> = {
+  category: categoryTags,
   domain: domainTags,
   tech: techTags,
   general: generalTags,
 };
 
-const tags = ([] as InternalTag[]).concat(domainTags, techTags, generalTags);
+const tags = ([] as InternalTag[]).concat(categoryTags, domainTags, techTags, generalTags);
 
-function getAll(): InternalTag[] {
-  return tags;
+function getTypeMap() {
+  return { ...typedTagMap };
 }
 
-function getList(locale: SupportedLocale, type?: TagType) {
+function getAll(): InternalTag[] {
+  return tags.slice();
+}
+
+function getList(locale: SupportedLocale, type?: TagTypeId): Tag[] {
   const sourceTags = (type && type in typedTagMap) ? typedTagMap[type] : tags;
 
   return sourceTags.map(({ text, ...others }) => ({
@@ -54,4 +74,4 @@ function getList(locale: SupportedLocale, type?: TagType) {
   }));
 }
 
-export { getAll, getList };
+export { getTypeMap, getAll, getList };

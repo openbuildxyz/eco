@@ -4,16 +4,15 @@ import { useState } from 'react';
 import { Button } from '@/components/react';
 import { Filter } from '@/components/icon';
 
-import type { TagId, TagType } from '../../../tag';
+import { type TagId, type TagTypeId, TagFilterWidget } from '../../../tag';
 import type { Project } from '../../typing';
 import ProjectCardWidget from '../project-card';
-import FilterArea from './FilterArea';
 
 type ProjectListWidgetProps = {
   dataSource: Project[];
 };
 
-type FilterTagMap = Partial<Record<TagType, TagId[]>>;
+type FilterTagMap = Partial<Record<TagTypeId, TagId[]>>;
 
 function filterByTags(dataSource: Project[], filters: FilterTagMap) {
   const tagMap: Record<string, true> = Object.values(filters).reduce((p, tags) => ({ ...p, ...tags.reduce((_p, tag) => ({ ..._p, [tag]: true }), {}) }), {});
@@ -28,7 +27,7 @@ function ProjectListWidget({ dataSource }: ProjectListWidgetProps) {
   const filterd = filterByTags(dataSource, filters);
   const count = filterd.length;
 
-  const handleFilterChange = (type: TagType, ids: TagId[]) => {
+  const handleFilterChange = (type: TagTypeId, ids: TagId[]) => {
     setFilters({ ...filters, [type]: ids });
   }
 
@@ -48,7 +47,7 @@ function ProjectListWidget({ dataSource }: ProjectListWidgetProps) {
             <ProjectCardWidget key={proj.id} dataSource={proj} />
           ))}
         </div>
-        <FilterArea
+        <TagFilterWidget
           className={clsx(filterable ? 'block col-span-1' : 'hidden')}
           onChange={handleFilterChange}
         />

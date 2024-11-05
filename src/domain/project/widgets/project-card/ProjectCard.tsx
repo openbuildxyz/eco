@@ -7,6 +7,8 @@ import {
 } from '@/components/react';
 import { ArrowRight } from '@/components/icon';
 
+import { TagGroupWidget } from '../../../tag';
+
 import type { Project } from '../../typing';
 import { resolveLocale } from '../../helper';
 
@@ -33,10 +35,13 @@ function ProjectCardWidget({ dataSource, showMore = false }: ProjectCardWidgetPr
 
   return (
     <Card>
-      <CardHeader className="leading-none">
+      <CardHeader className="flex-col items-start leading-none">
         {projLink ? (
           <a className="text-lg/tight font-semibold" href={projLink} target="_blank" rel="nofollow external">{dataSource.title}</a>
-        ) : dataSource.title}
+        ) : (
+          <span className="text-lg/tight font-semibold">{dataSource.title}</span>
+        )}
+        <TagGroupWidget className="mt-2" tags={dataSource.tags} />
       </CardHeader>
       <CardBody className="py-0 text-sm font-light break-all">{dataSource.description}</CardBody>
       <CardFooter>
