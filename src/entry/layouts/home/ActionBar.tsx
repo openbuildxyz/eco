@@ -27,7 +27,7 @@ function ActionBar({ className, locale }: ActionBarProps) {
       >
         {locale.contribute}
       </Button>
-      <Button
+      {/* <Button
         as={Link}
         href={getLocaleUrl('/guides/how-to-join/')}
         size="lg"
@@ -35,7 +35,7 @@ function ActionBar({ className, locale }: ActionBarProps) {
         variant="bordered"
       >
         {locale.join}
-      </Button>
+      </Button> */}
     </div>
   );
 }
