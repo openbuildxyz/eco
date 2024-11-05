@@ -1,2 +1,2 @@
-export type { TagType, InternalTag, Tag } from './typing';
-export { getList } from './repository';
+export type { TagId, TagType, InternalTag, Tag } from './typing';
+export { getAll, getList } from './repository';

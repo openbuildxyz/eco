@@ -1,6 +1,7 @@
 import type { LocaleValue } from '@/types';
 
 import type { Contributor } from '../contributor';
+import type { TagId } from '../tag';
 
 type ProjectLocale = {
   browseMore: string;
@@ -18,7 +19,7 @@ type InternalProject = {
   repo?: GitHubRepo | string;
   homepage?: string;
   owners: Contributor['github']['username'][];
-  tags?: string[];
+  tags?: TagId[];
 };
 
 type Project = Omit<InternalProject, 'title' | 'description' | 'owners'> & {

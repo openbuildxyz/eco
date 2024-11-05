@@ -19,6 +19,7 @@ const projects: InternalProject[] = [
     },
     owners: ['zhang-wenchao', 'ourai'],
     homepage: OFFICIAL_WEBSITE_URL,
+    tags: ['web3', 'frontend', 'backend', 'react'],
   },
   {
     id: 'openbuildeco',
@@ -28,6 +29,7 @@ const projects: InternalProject[] = [
     },
     owners: ['ourai'],
     repo: { owner: 'openbuildxyz', name: 'eco' },
+    tags: ['frontend', 'react'],
   },
   {
     id: 'amphitheatre',
@@ -94,6 +96,7 @@ const projects: InternalProject[] = [
     owners: ['pseudoyu'],
     repo: { owner: 'pseudoyu', name: 'Web3Insights' },
     homepage: 'https://web3insights.app',
+    tags: ['frontend', 'web3'],
   },
   {
     id: 'accordingWork',
@@ -108,6 +111,7 @@ const projects: InternalProject[] = [
     owners: ['wfnuser'],
     repo: { owner: 'YoubetDao', name: 'youbet-task' },
     homepage: 'https://according.work',
+    tags: ['frontend', 'web3'],
   },
   {
     id: 'w5Link',
@@ -116,6 +120,7 @@ const projects: InternalProject[] = [
       zh: 'W5.Link',
     },
     owners: ['septshep'],
+    tags: ['frontend', 'backend', 'web3'],
   },
   {
     id: 'gasWait',
@@ -164,6 +169,7 @@ const projects: InternalProject[] = [
     },
     owners: ['ourai'],
     homepage: 'https://handiejs.github.io',
+    tags: ['frontend', 'react', 'vue'],
   },
   {
     id: 'petals',
@@ -177,6 +183,7 @@ const projects: InternalProject[] = [
     },
     owners: ['ourai'],
     homepage: 'https://petals-ui.github.io',
+    tags: ['frontend', 'react', 'vue'],
   },
 ];
 

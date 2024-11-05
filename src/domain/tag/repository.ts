@@ -41,6 +41,10 @@ const typedTagMap: Record<TagType, InternalTag[]> = {
 
 const tags = ([] as InternalTag[]).concat(domainTags, techTags, generalTags);
 
+function getAll(): InternalTag[] {
+  return tags;
+}
+
 function getList(locale: SupportedLocale, type?: TagType) {
   const sourceTags = (type && type in typedTagMap) ? typedTagMap[type] : tags;
 
@@ -50,4 +54,4 @@ function getList(locale: SupportedLocale, type?: TagType) {
   }));
 }
 
-export { getList };
+export { getAll, getList };
