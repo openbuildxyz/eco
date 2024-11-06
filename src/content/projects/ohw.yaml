@@ -1,0 +1,10 @@
+id: ohw
+title:
+  en: Open Hardware Wallet
+  zh: 硬件钱包
+owners:
+  - zhang-wenchao
+homepage: https://github.com/butterfly-communtiy
+tags:
+  - web3
+  - c

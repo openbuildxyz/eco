@@ -1,0 +1,13 @@
+id: openbuildeco
+title:
+  en: OpenBuild Ecosystem Website
+  zh: OpenBuild 生态
+owners:
+  - ourai
+repo:
+  owner: openbuildxyz
+  name: eco
+tags:
+  - app
+  - frontend
+  - react

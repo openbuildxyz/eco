@@ -1,0 +1,15 @@
+id: openbuildxyz
+title:
+  en: OpenBuild Official Website
+  zh: OpenBuild 官网
+description:
+  en: Help ✦ Developers ✦ get on the Success Way to Web3
+  zh: Help ✦ Developers ✦ get on the Success Way to Web3
+owners:
+  - zhang-wenchao
+  - ourai
+homepage: https://openbuild.xyz
+tags:
+  - app
+  - web3
+  - react

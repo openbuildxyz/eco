@@ -1,0 +1,17 @@
+id: accordingWork
+title:
+  en: According Work
+  zh: According Work
+description:
+  en: Fairly distributing rewards for R & D efforts.
+  zh: Fairly distributing rewards for R & D efforts.
+owners:
+  - wfnuser
+repo:
+  owner: YoubetDao
+  name: youbet-task
+homepage: https://according.work
+tags:
+  - app
+  - web3
+  - react

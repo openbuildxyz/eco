@@ -1,19 +1,12 @@
-import type { LocaleValue } from '@/types';
+import type { PickCollectionData } from '@/types';
 
 type TagTypeId = 'general' | 'category' | 'domain' | 'tech';
 
-type TagType = {
-  id: TagTypeId;
-  text: LocaleValue<string>;
-};
+type TagType = PickCollectionData<'tagTypes'>;
 
 type TagId = string;
 
-type InternalTag = {
-  id: TagId;
-  text: LocaleValue<string>;
-  type: TagTypeId;
-};
+type InternalTag = PickCollectionData<'tags'>;
 
 type Tag = Omit<InternalTag, 'text'> & {
   text: string;

@@ -1,0 +1,14 @@
+id: answerWalletConnector
+title:
+  en: Answer Web3 Wallet Connector
+  zh: Answer Web3 钱包连接器
+description:
+  en: An Apache Answer plugin to support authorizing with Web3 wallet.
+  zh: 一个支持用 Web3 钱包授权的 Apache Answer 插件。
+owners:
+  - i-Lucifer
+  - ourai
+tags:
+  - pluggable
+  - web3
+  - react

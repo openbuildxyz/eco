@@ -1,0 +1,17 @@
+id: web3Insights
+title:
+  en: Web3Insights
+  zh: Web3Insights
+description:
+  en: A comprehensive metrics platform focused on Web3 ecosystems, communities, repositories, and developers.
+  zh: A comprehensive metrics platform focused on Web3 ecosystems, communities, repositories, and developers.
+owners:
+  - pseudoyu
+repo:
+  owner: pseudoyu
+  name: Web3Insights
+homepage: https://web3insights.app
+tags:
+  - app
+  - web3
+  - react

@@ -1,0 +1,13 @@
+id: web3Packages
+title:
+  en: Web3Packages
+  zh: Web3Packages
+description:
+  en: The goal of this project is to build a Web3 standard library similar to npm.
+  zh: 本项目目标是建立一个类似 npm 的 Web3 标准库。
+owners:
+  - tokenlin
+homepage: https://github.com/web3packages
+tags:
+  - semiFinished
+  - web3

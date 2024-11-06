@@ -1,64 +1,16 @@
 import type { SupportedLocale } from '@/types';
-import { unwrapLocalValue } from '@/utils';
+import { getCollection, unwrapLocalValue } from '@/utils';
 
 import type { TagTypeId, InternalTag, Tag } from './typing';
 
-type UntypedTag = Omit<InternalTag, 'type'>;
+async function getSpecificTagCollection(type: TagTypeId) {
+  return await getCollection('tags', data => data.type === type);
+}
 
-const categoryTags: InternalTag[] = ([
-  {
-    id: 'app',
-    text: { en: 'Apps/Sites', zh: '应用/网站' },
-  },
-  {
-    id: 'pluggable',
-    text: { en: 'Services/Plugins', zh: '服务/插件' },
-  },
-  {
-    id: 'semiFinished',
-    text: { en: 'Libraries/Frameworks', zh: '库/框架' },
-  },
-] as UntypedTag[]).map(tag => ({ ...tag, type: 'category' }))
-
-const domainTags: InternalTag[] = ([
-  {
-    id: 'frontend',
-    text: { en: 'Front-end', zh: '前端' },
-  },
-  {
-    id: 'backend',
-    text: { en: 'Back-end', zh: '后端' }
-  },
-  {
-    id: 'web3',
-    text: { en: 'Web3', zh: 'Web3' },
-  },
-] as UntypedTag[]).map(tag => ({ ...tag, type: 'domain' }));
-
-const techTags: InternalTag[] = ([
-  {
-    id: 'react',
-    text: { en: 'React', zh: 'React' },
-  },
-  {
-    id: 'vue',
-    text: { en: 'Vue', zh: 'Vue' },
-  },
-  {
-    id: 'rust',
-    text: { en: 'Rust', zh: 'Rust' },
-  },
-  {
-    id: 'go',
-    text: { en: 'Go', zh: 'Go' },
-  },
-  {
-    id: 'c',
-    text: { en: 'C', zh: 'C' },
-  },
-] as UntypedTag[]).map(tag => ({ ...tag, type: 'tech' }));
-
-const generalTags: InternalTag[] = [];
+const categoryTags: InternalTag[] = await getSpecificTagCollection('category');
+const domainTags: InternalTag[] = await getSpecificTagCollection('domain');
+const techTags: InternalTag[] = await getSpecificTagCollection('tech');
+const generalTags: InternalTag[] = await getSpecificTagCollection('general');
 
 const typedTagMap: Record<TagTypeId, InternalTag[]> = {
   category: categoryTags,

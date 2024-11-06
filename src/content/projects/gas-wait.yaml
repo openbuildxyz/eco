@@ -1,0 +1,13 @@
+id: gasWait
+title:
+  en: GasWait
+  zh: GasWait
+description:
+  en: A tool that allows users to choose the ideal time for submitting their transactions, helping them save on gas fees.
+  zh: A tool that allows users to choose the ideal time for submitting their transactions, helping them save on gas fees.
+owners:
+  - smallfu6
+homepage: https://github.com/Unblock-Chain
+tags:
+  - web3
+  - go

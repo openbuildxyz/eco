@@ -1,0 +1,14 @@
+id: amphitheatre
+title:
+  en: Amphitheatre
+  zh: Amphitheatre
+description:
+  en: Instantly spin up fresh, automated dev environments in the cloud and start developing within seconds.
+  zh: Instantly spin up fresh, automated dev environments in the cloud and start developing within seconds.
+owners:
+  - wangeguo
+homepage: https://amphitheatre.app
+tags:
+  - pluggable
+  - backend
+  - rust

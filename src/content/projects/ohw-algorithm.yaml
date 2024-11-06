@@ -1,0 +1,15 @@
+id: ohwAlgorithm
+title:
+  en: OHW-Algorithm
+  zh: OHW-Algorithm
+description:
+  en: An embedded systems-focused library that implements some cryptographic algorithms.
+  zh: An embedded systems-focused library that implements some cryptographic algorithms.
+owners:
+  - septshep
+repo:
+  owner: butterfly-communtiy
+  name: ohw-algorithm
+tags:
+  - rust
+  - c

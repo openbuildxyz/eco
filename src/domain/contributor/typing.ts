@@ -1,14 +1,6 @@
-import type { LocaleValue } from '@/types';
+import type { PickCollectionData } from '@/types';
 
-type GitHubUser = {
-  id: number;
-  username: string;
-};
-
-type InternalContributor = {
-  nickname: LocaleValue<string>;
-  github: GitHubUser;
-};
+type InternalContributor = PickCollectionData<'contributors'>;
 
 type Contributor = Omit<InternalContributor, 'nickname'> & {
   nickname: string;

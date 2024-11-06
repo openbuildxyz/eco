@@ -1,0 +1,13 @@
+id: petals
+title:
+  en: Petals
+  zh: Petals
+description:
+  en: Born for component-based front-end development, and provides atomic controls (UI components).
+  zh: 跨 JS-based 技术栈控件（UI 组件）体系，为基于组件的前端开发而生，提供大量原子化的控件。
+owners:
+  - ourai
+homepage: https://petals-ui.github.io
+tags:
+  - semiFinished
+  - frontend
