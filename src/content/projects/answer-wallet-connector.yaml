@@ -8,6 +8,7 @@ description:
 owners:
   - i-Lucifer
   - ourai
+repo: https://github.com/apache/incubator-answer-plugins/tree/main/connector-wallet
 tags:
   - pluggable
   - web3
