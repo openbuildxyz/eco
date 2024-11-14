@@ -1,10 +1,16 @@
 id: ohw
 title:
   en: Open Hardware Wallet
-  zh: 硬件钱包
+  zh: Open Hardware Wallet
+description:
+  en: An open-source project that helps you create your own hardware wallet, free from commercial interests. 
+  zh: 一个能帮助您拥有属于自己的硬件钱包的开源项目，没有商业利益。
 owners:
   - zhang-wenchao
 homepage: https://github.com/butterfly-communtiy
+repo:
+  owner: butterfly-communtiy
+  name: ohw-firmware
 tags:
   - web3
   - c
