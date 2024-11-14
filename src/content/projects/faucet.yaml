@@ -5,7 +5,8 @@ title:
 description:
   en: An open-source project dedicated to simplifying the process for Web3 developers to acquire test token.
   zh: An open-source project dedicated to simplifying the process for Web3 developers to acquire test token.
-owners: []
+owners:
+  - xiangnuans
 repo: https://github.com/faucet-terminal
 homepage: https://faucet.openbuild.xyz
 tags:
