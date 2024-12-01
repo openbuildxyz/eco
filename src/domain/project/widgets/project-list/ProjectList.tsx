@@ -47,7 +47,7 @@ function ProjectListWidget({ dataSource }: ProjectListWidgetProps) {
     <div>
       <div className="flex items-center justify-between mb-4">
         <div><span className="font-semibold">{count}</span> item{count !== 1 ? 's' : ''} found</div>
-        <div>
+        <div className="hidden sm:block">
           <Button
             variant={filterable ? 'solid' : 'light'}
             isIconOnly
@@ -57,8 +57,8 @@ function ProjectListWidget({ dataSource }: ProjectListWidgetProps) {
           </Button>
         </div>
       </div>
-      <div className={clsx(filterable ? 'grid grid-cols-4 gap-4' : undefined)}>
-        <div className={clsx(['grid gap-4', filterable ? 'grid-cols-3 col-span-3' : 'grid-cols-4'])}>
+      <div className={clsx(filterable ? 'grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4' : undefined)}>
+        <div className={clsx(['grid gap-4 grid-cols-1', filterable ? 'md:grid-cols-2 md:col-span-2 lg:grid-cols-3 lg:col-span-3' : 'sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'])}>
           {filterd.map(proj => (
             <ProjectCardWidget key={proj.id} dataSource={proj} />
           ))}
