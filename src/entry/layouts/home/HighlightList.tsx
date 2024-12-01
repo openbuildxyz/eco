@@ -10,7 +10,7 @@ type HighlightListProps = {
 
 function HighlightList({ locale }: HighlightListProps) {
   return (
-    <div className="grid grid-cols-3 gap-9">
+    <div className="grid gap-4 lg:gap-9 grid-cols-1 sm:grid-cols-3">
       {(['growth', 'cuttingEdge', 'reputation'] as HighlightPoint[]).map(key => {
         const brief = locale[key];
 

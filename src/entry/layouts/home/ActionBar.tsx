@@ -16,7 +16,7 @@ function ActionBar({ className, locale }: ActionBarProps) {
   const getLocaleUrl = getRelativeLocaleUrl.bind(null, getCurrentLocale());
 
   return (
-    <div className={clsx('flex gap-4', className)}>
+    <div className={clsx('flex flex-col sm:flex-row gap-4 w-full sm:w-auto', className)}>
       <Button
         as={Link}
         href={getLocaleUrl('/guides/')}
