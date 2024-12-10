@@ -39,8 +39,8 @@ Projects produced based on the collaboration system on GitHub have formed an eco
 
 It can be seen that the theme of the OpenBuild Ecosystem is:
 
-- **[Co-building](/eco/guides/how-to-contribute/)**—either becoming stronger through project practice with others, or jointly creating products for ideas you believe in;
-- **Incubation**—your own projects need help from OpenBuild and can give back to OpenBuild's efforts in some way.
+- **[Co-building](/eco/guides/how-to-contribute/)** - either becoming stronger through project practice with others, or jointly creating products for ideas you believe in;
+- **Incubation** - your own projects need help from OpenBuild and can give back to OpenBuild's efforts in some way.
 
 This is not only another entrance to the world of the "OpenBuild System" but also complements the official website, serving as a powerful backing force behind its development!
 
