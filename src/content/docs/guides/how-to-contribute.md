@@ -59,7 +59,7 @@ You must be eager to get started and can't wait to complete the task quickly - b
 
 Once you have created your own development branch based on the specified branch and correctly configured the development environment, you can officially start the task!
 
-It's not just about writing code; you also need to test as comprehensively and rigorously as possible before submitting. This is both a responsibility for the code you've written and a basic operation to reduce无效沟通 and improve collaboration efficiency.
+It's not just about writing code; you also need to test as comprehensively and rigorously as possible before submitting. This is both a responsibility for the code you've written and a basic operation to reduce ineffective communication and improve collaboration efficiency.
 
 The code you write is public and will be seen by others; you wouldn't want to leave an impression of being irresponsible and unreliable, would you?
 
