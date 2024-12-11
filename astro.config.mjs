@@ -36,7 +36,7 @@ export default defineConfig({
           items: [
             'guides',
             // 'guides/team',
-            // 'guides/code-of-conduct',
+            'guides/code-of-conduct',
           ],
         },
         {
