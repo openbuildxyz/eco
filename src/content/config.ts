@@ -53,7 +53,7 @@ const projects = defineCollection({
   }),
 });
 
-const blog = defineCollection({
+const posts = defineCollection({
   type: 'content',
   // Type-check frontmatter using a schema
   schema: z.object({
@@ -72,6 +72,6 @@ export const collections = {
   contributors,
   tagTypes, tags,
   projects,
-  blog,
+  posts,
   docs,
 };

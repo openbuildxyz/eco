@@ -15,6 +15,7 @@ const I18N_CONFIG: LocaleValue<LocaleConfig> = {
     navs: {
       projects: 'Projects',
       guides: 'Guides',
+      posts: 'Posts',
     },
   },
   zh: {
@@ -25,6 +26,7 @@ const I18N_CONFIG: LocaleValue<LocaleConfig> = {
     navs: {
       projects: '项目',
       guides: '指南',
+      posts: '博客',
     },
   },
 };

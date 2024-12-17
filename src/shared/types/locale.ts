@@ -10,6 +10,7 @@ type SiteConfig = {
 type NavConfig = {
   projects: string;
   guides: string;
+  posts: string;
 };
 
 type LocaleConfig = {
