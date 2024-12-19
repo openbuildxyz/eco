@@ -2,7 +2,7 @@
 title: 期待已久的开源 OpenBuild 官网前端代码库来啦！
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Dec 17 2024'
-heroImage: '/images/blog/the-openbuild-official-website-frontend-codebase-is-open-now/banner.jpg'
+heroImage: '/eco/images/blog/the-openbuild-official-website-frontend-codebase-is-open-now/banner.jpg'
 ---
 
 自从今年 8 月末深度参与 OpenBuild 贡献以来，我给自己立下的第一个目标就是将 OpenBuild 官网前端代码库给开源了——这也很符合 OpenBuild 的「本性」与发展路线。
@@ -38,7 +38,7 @@ heroImage: '/images/blog/the-openbuild-official-website-frontend-codebase-is-ope
 
 在我参与后，利用多年经验积累与思考所形成的「[反混沌](https://ntks.ourai.ws)」理论与实践体系，已经将「熵」减低很多：
 
-![「模块化」目录结构划分模式的模块关系](/images/blog/the-openbuild-official-website-frontend-codebase-is-open-now/modularized.png)
+![「模块化」目录结构划分模式的模块关系](/eco/images/blog/the-openbuild-official-website-frontend-codebase-is-open-now/modularized.png)
 
 主要是通过调整文件组织结构与引用方式并加以约束，呈现出如上图所示架构层次。
 
