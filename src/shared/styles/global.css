@@ -84,6 +84,16 @@ p {
 .prose p {
   margin-bottom: 2em;
 }
+.prose ul,
+.prose ol {
+  list-style: revert;
+  margin: revert;
+  padding: revert;
+}
+.prose p + ul,
+.prose p + ol {
+  margin-top: -1.8em;
+}
 textarea {
   width: 100%;
   font-size: 16px;
