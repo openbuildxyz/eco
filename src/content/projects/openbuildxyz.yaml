@@ -8,6 +8,9 @@ description:
 owners:
   - zhang-wenchao
   - ourai
+repo:
+  owner: openbuildxyz
+  name: openbuild-frontend
 homepage: https://openbuild.xyz
 tags:
   - app
