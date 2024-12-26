@@ -1,6 +1,6 @@
 ---
 title: 期待已久的开源 OpenBuild 官网前端代码库来啦！
-description: 'Lorem ipsum dolor sit amet'
+description: 加入 OpenBuild，共创 Web3 开源！
 pubDate: 'Dec 17 2024'
 heroImage: '/eco/images/blog/the-openbuild-official-website-frontend-codebase-is-open-now/banner.jpg'
 ---
