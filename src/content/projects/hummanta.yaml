@@ -1,0 +1,15 @@
+id: hummanta
+title:
+  en: Hummanta
+  zh: Hummanta
+description:
+  en: A collection of modular, reusable compiler and toolchain technologies for smart contract programming languages.
+  zh: 智能合约编程语言的模块化、可重用编译器和工具链技术集合。
+owners:
+  - wangeguo
+  - septshep
+repo: https://github.com/hummanta
+tags:
+  - semiFinished
+  - web3
+  - rust
