@@ -1,0 +1,14 @@
+id: browserJSON
+title:
+  en: Browser JSON
+  zh: Browser JSON
+description:
+  en: A Chrome extension for formatting and highlighting JSON content
+  zh: 一个美观、实用的 Chrome 扩展，用于格式化和高亮显示JSON内容。
+owners:
+  - lispking
+repo: https://github.com/lispking/browser-json
+homepage: https://github.com/lispking/browser-json
+tags:
+  - pluggable
+  - javascript

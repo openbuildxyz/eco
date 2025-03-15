@@ -1,0 +1,14 @@
+id: browserProxy
+title:
+  en: Browser Proxy
+  zh: Browser Proxy
+description:
+  en: A simple proxy manager for Chrome browser
+  zh: 一个简单的 Chrome 浏览器代理管理插件，可以帮助用户快速切换和管理代理设置。
+owners:
+  - lispking
+repo: https://github.com/lispking/browser-proxy
+homepage: https://github.com/lispking/browser-proxy
+tags:
+  - pluggable
+  - javascript
