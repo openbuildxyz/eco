@@ -1,0 +1,23 @@
+id: deprank
+title:
+  en: DepRank
+  zh: DepRank
+description:
+  en: Open Source Contribution & Allocation Audit System.
+  zh: 开源贡献与分配审计系统。
+owners:
+  - wangeguo
+  - nakiswen
+  - deep12398
+  - os-lihua
+  - fuhaooo
+  - ziyinlox-purple
+repo: https://github.com/deprank
+tags:
+  - web3
+  - app
+  - backend
+  - frontend
+  - react
+  - rust
+  - typescript
