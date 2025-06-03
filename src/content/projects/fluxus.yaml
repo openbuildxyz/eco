@@ -1,0 +1,15 @@
+id: fluxus
+title:
+  en: Fluxus
+  zh: Fluxus
+description:
+  en: A lightweight stream processing engine written in Rust, designed for efficient real-time data processing and analysis.
+  zh: 一个用 Rust 编写的轻量级流处理引擎，旨在实现高效的实时数据处理和分析。
+owners:
+  - lispking
+repo: https://github.com/lispking/fluxus
+homepage: https://crates.io/crates/fluxus
+tags:
+  - semiFinished
+  - web3
+  - rust
