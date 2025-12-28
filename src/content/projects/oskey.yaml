@@ -1,0 +1,16 @@
+id: oskey
+title:
+  en: OSKey
+  zh: OSKey
+description:
+  en: An open-source project that helps you create your own hardware wallet, free from commercial interests. 
+  zh: 一个能帮助您拥有属于自己的硬件钱包的开源项目，我们正在构建连接区块链和物理设备的核心基础设施。
+owners:
+  - zhang-wenchao
+homepage: https://github.com/butterfly-communtiy
+repo:
+  owner: butterfly-community
+  name: oskey-firmware
+tags:
+  - web3
+  - c

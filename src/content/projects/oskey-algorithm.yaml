@@ -1,0 +1,17 @@
+id: oskeyAlgorithm
+title:
+  en: OSKey-Algorithm
+  zh: OSKey-Algorithm
+description:
+  en: A universal cross-platform wallet development library that implements mnemonic phrase and private key derivation. Compatible with various platforms, including embedded systems. Helps developers create wallet applications.
+  zh: 通用的全平台钱包开发库，实现了助记词和私钥派生，以及交易解析和签名，适用于各个平台，包括嵌入式。帮助开发者创建钱包应用。
+owners:
+  - zhang-wenchao
+  - septshep
+homepage: https://github.com/butterfly-community
+repo:
+  owner: butterfly-community
+  name: oskey-lib-core
+tags:
+  - rust
+  - c
