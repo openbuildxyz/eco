@@ -11,7 +11,7 @@ const projectMap: Record<InternalProject['id'], InternalProject> = projects.redu
   [c.id]: c,
 }), {});
 
-const featured = ['openbuildxyz', 'amphitheatre', 'web3Insights', 'accordingWork', 'gasWait', 'ohw', 'handie', 'openbuildeco'];
+const featured = ['openbuildxyz', 'amphitheatre', 'web3Insights', 'accordingWork', 'gasWait', 'oskey', 'handie', 'openbuildeco'];
 
 function resolveProject(
   { title, description, owners, ...others }: InternalProject,
