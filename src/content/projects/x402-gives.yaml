@@ -1,0 +1,17 @@
+id: x402Gives
+title:
+  en: x402.gives
+  zh: x402.gives
+description:
+  en: x402.gives is a zero-backend donation app powered by the x402 protocol and the x402x settlement framework. 
+  zh: 帮助开发者使用 x402 协议，快速发布可验证的 GitHub 捐赠页面。
+owners:
+  - jolestar
+  - pseudoyu
+homepage: https://github.com/x402-gives/x402.gives
+repo:
+  owner: x402-gives
+  name: x402.gives
+tags:
+  - web3
+  - x402
